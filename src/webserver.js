@@ -23,7 +23,7 @@ const requestListener = async (req, res) => {
     if (responseData === undefined) {
         console.log(`Content for ${url} not cached. Fetching content.`)
 
-        content = await axios.get(url)
+        await axios.get(url)
             .then((content) => {
                 responseData = content.data
                 webCache.set(url, responseData)
